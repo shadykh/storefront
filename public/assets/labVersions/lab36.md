@@ -167,7 +167,7 @@ Create the Virtual Store application as follows:
 
   - For the repo ***storefront*** clicks => [here](https://github.com/shadykh/storefront).
   - Pull Requests:
-    - [https://github.com/shadykh/storefront/pull/3](https://github.com/shadykh/storefront/pull/3)
+    - [https://github.com/shadykh/storefront/pull/4](https://github.com/shadykh/storefront/pull/4)
 
 **[⬆ Back to Index](#index)**
 

@@ -15,7 +15,7 @@ let initialState = {
             tags: 'Everlasting Comfort Cool Mist Humidifier for Bedroom (6L) - Filterless, Quiet, Ultrasonic - Large Room Home Air Vaporizer with Diffuser and Essential Oil Tray (Black)',
             description: 'Features a 6 liter (1.6 gallons) tank with an adjustable mist output. Our ultrasonic humidifier works in rooms up to 500 square feet and lasts for 50 straight hours. This makes our air humidifier ideally suited for large rooms and is fantastic for any home, apartment, office, nursery, or college dorm.',
             inventory: 20,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/613AyI8iW0S._AC_SX466_.jpg'
+            image: 'https://www.jordan.ubuy.com/productimg/?image=aHR0cHM6Ly9pbWFnZXMtbmEuc3NsLWltYWdlcy1hbWF6b24uY29tL2ltYWdlcy9JLzYxM0F5SThpVzBTLl9TUzQwMF8uanBn.jpg'
         },
         {
             category: 'FOOD',
