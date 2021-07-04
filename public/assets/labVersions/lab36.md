@@ -192,6 +192,7 @@ Create the Virtual Store application as follows:
 - I did this lab with help of
   - dependencies
     - node-sass
+    - Material UI
     - react
     - react-dom
     - react-scripts
