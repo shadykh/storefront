@@ -187,7 +187,7 @@ Create the Virtual Store application as follows:
 - #### App
 
   - run `npm start`
-  - Deployment link 🌍: [storefront](https://storefront401.netlify.app/)
+  - Deployment link 🌍: [storefront](https://storefront-401.netlify.app/)
 
 - I did this lab with help of
   - dependencies
