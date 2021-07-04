@@ -12,7 +12,7 @@
   - [Github](#Github)
   - [UML](#UML)
   - [App](#App)
-  - [Deployment link](https://todo401.netlify.app/)
+  - [Deployment link](https://storefront-401.netlify.app/)
 - [Author Links](#Author-Links)
 - [Back to main README](../../../README.md)
 - [Back to head or the repo](https://github.com/shadykh/todo)
@@ -167,7 +167,7 @@ Create the Virtual Store application as follows:
 
   - For the repo ***storefront*** clicks => [here](https://github.com/shadykh/storefront).
   - Pull Requests:
-    - [https://github.com/shadykh/storefront/pull/2](https://github.com/shadykh/storefront/pull/2)
+    - [https://github.com/shadykh/storefront/pull/3](https://github.com/shadykh/storefront/pull/3)
 
 **[⬆ Back to Index](#index)**
 
