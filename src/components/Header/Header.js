@@ -1,6 +1,5 @@
 import { AppBar, Button, Grid, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import React from 'react';
-import { connect } from 'react-redux';
 
 function Header() {
 
@@ -31,10 +30,4 @@ function Header() {
   )
 }
 
-const mapStateToProps = state => ({
-  cartReducer: state.cartReducer
-});
-
-const mapDispatchToProps = { };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header; 
