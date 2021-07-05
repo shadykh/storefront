@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer';
 import Categories from './components/storefront/Categories';
 import Products from './components/storefront/Products';
 import ActiveCategory from './components/storefront/ActiveCategory';
-
+import SimpleCart from './components/cart/SimpleCart';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <CssBaseline />
       <Header />
       <Categories />
+      <SimpleCart />
       <ActiveCategory />
       <Products />
       <Footer />
