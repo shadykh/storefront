@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
 import AddCircleTwoToneIcon from '@material-ui/icons/AddCircleTwoTone';
 import OpenInNewTwoToneIcon from '@material-ui/icons/OpenInNewTwoTone';
-import { getAllProduct, getFilteredProducts } from '../../store/products';
+import { getAllProduct } from '../../store/products';
 import { addToCart } from '../../store/cart';
 
 const Products = props => {
