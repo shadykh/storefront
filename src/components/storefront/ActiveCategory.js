@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
 
+
 const ActiveCategory = props => {
     return (
         <section className='active'>

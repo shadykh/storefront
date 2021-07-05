@@ -15,7 +15,7 @@
   - [Deployment link](https://storefront-401.netlify.app/)
 - [Author Links](#Author-Links)
 - [Back to main README](../../../README.md)
-- [Back to head or the repo](https://github.com/shadykh/todo)
+- [Back to head or the repo](https://github.com/shadykh/storefront)
 
 ---
 
@@ -41,7 +41,7 @@ Create a UML diagram of the **Virtual Store** architecture on a whiteboard befor
 
 ## Business Requirements
 
-Refer to the [Virtual Store System Overview](../../apps-and-libraries/store/README.md) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
+Refer to the [Virtual Store System Overview](../../../README) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
 
 **[⬆ Back to Index](#index)**
 
@@ -167,7 +167,7 @@ Create the Virtual Store application as follows:
 
   - For the repo ***storefront*** clicks => [here](https://github.com/shadykh/storefront).
   - Pull Requests:
-    - [https://github.com/shadykh/storefront/pull/3](https://github.com/shadykh/storefront/pull/3)
+    - [https://github.com/shadykh/storefront/pull/6](https://github.com/shadykh/storefront/pull/6)
 
 **[⬆ Back to Index](#index)**
 

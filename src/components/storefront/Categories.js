@@ -1,7 +1,8 @@
-import { Button, ButtonGroup, Typography } from '@material-ui/core';
 import { connect } from 'react-redux';
 
-import { setActiveCategory, reset } from '../../store/categories';
+import { Button, ButtonGroup, Typography } from '@material-ui/core';
+
+import { setActiveCategory, reset, allProducts } from '../../store/categories';
 
 
 const Categories = props => {
@@ -13,6 +14,7 @@ const Categories = props => {
                     return <Button key={idx} className='btn' onClick={() => props.setActiveCategory(category)} >{category.displayName}</Button>
                 })}
                 <Button onClick={() => props.reset()}>reset active category</Button>
+                <Button onClick={() => props.allProducts()}>All products</Button>
             </ButtonGroup>
         </section>
     )
@@ -22,6 +24,6 @@ const mapStateToProps = state => ({
     categoryReducer: state.categoryReducer
 });
 
-const mapDispatchToProps = { setActiveCategory, reset }
+const mapDispatchToProps = { setActiveCategory, reset, allProducts }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);
