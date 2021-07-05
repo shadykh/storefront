@@ -7,7 +7,7 @@ let initialState = {
             tags: 'PIHEN Timer, Kitchen Timer Multi-Function Electronic Digital Timer for Kids, Flip Timer with Time and Alarm Function, Suitable for Work, Exercise, Games, Cooking.',
             description: 'The timer is designed with electroplated alloy. The durability of the product has been greatly improved. The bottom of our timer is designed with magnetic attraction, which makes our products suitable for more occasions.',
             inventory: 13,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/5163ZbhjKyL._AC_SX522_.jpg'
+            image: 'https://m.media-amazon.com/images/I/5163ZbhjKyL._AC_SS450_.jpg'
         }, {
             category: 'ELECTRONICS',
             name: 'Everlasting Mist Humidifier',
@@ -15,7 +15,7 @@ let initialState = {
             tags: 'Everlasting Comfort Cool Mist Humidifier for Bedroom (6L) - Filterless, Quiet, Ultrasonic - Large Room Home Air Vaporizer with Diffuser and Essential Oil Tray (Black)',
             description: 'Features a 6 liter (1.6 gallons) tank with an adjustable mist output. Our ultrasonic humidifier works in rooms up to 500 square feet and lasts for 50 straight hours. This makes our air humidifier ideally suited for large rooms and is fantastic for any home, apartment, office, nursery, or college dorm.',
             inventory: 20,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/613AyI8iW0S._AC_SX466_.jpg'
+            image: 'https://i5.walmartimages.com/asr/7e8e1867-b57a-437d-9dd6-306ac9cc918c_1.ca80304dcf1ebf78deb5e47c21e80879.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff'
         },
         {
             category: 'FOOD',
@@ -24,7 +24,7 @@ let initialState = {
             tags: 'Smartfood White Cheddar Flavored Popcorn, 0.625 Ounce (Pack of 40)',
             description: '40 count of .625 ounce bags of Smart food White Cheddar Popcorn. Only 100 calories per bag. Delicious popcorn with real cheese makes for a great snack. No artificial flavors or preservatives. Air popped 100% whole grain popcorn made with real ingredients',
             inventory: 19,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/81LOYQEdW3L._SX569_PIbundle-40,TopRight,0,0_AA569SH20_.jpg'
+            image: 'https://images-na.ssl-images-amazon.com/images/I/91FZemKMzkL._SX425_.jpg'
         }, {
             category: 'FOOD',
             name: "Welch's Fruit Snacks",
@@ -32,7 +32,7 @@ let initialState = {
             tags: "Welch's Fruit Snacks, Mixed Fruit & Berries 'n Cherries Bulk Variety Pack, Gluten Free, 0.9 oz Individual Single Serve Bags (Pack of 110)",
             description: "Mixed Fruit- Fruit puree, (grape, peach, orange, strawberry and raspberry), corn syrup, sugar, modiged corn starch, gelatin, concord grape juice from concentrate, citric acid, lactic acid, natural and artifical flavors, ascorbic acid (vitamin C), alpha tocopherol acetate (vitamin E), vitamin A palmitate, sodium citrate, coconut oil, carnauba wax, annatto (color), tumeric (color), red 40, and blue 1. Berries 'n Cherries- Fruit puree (pear, peach, strawberry, raspberry, blackberry, blueberry and cherry), corn syrup, sugar, modified corn starch, gelatin, citric acid, lactic acid, natural and artifical flavors, ascorbic acid (vitamin c), alpha tocopherol acetate (vitamin E), vitamin A palmitate, sodium citrate, coconut oil, carnauba wax, red 40, and blue 1.",
             inventory: 39,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/91sTWGXiHgL._SX425_.jpg'
+            image: 'https://i5.walmartimages.com/asr/30f362d7-ff0e-4cd7-8c5c-87735abb79f3_1.020e4f5fb6315b1d903806b1f43ad1b2.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF'
         },
 
         {
@@ -42,7 +42,7 @@ let initialState = {
             tags: 'Mystery, Psychological thriller, Thriller',
             description: 'Death Note (stylized as DEATH NOTE) is a Japanese manga series written by Tsugumi Ohba and illustrated by Takeshi Obata. The story follows Light Yagami, a teen genius who discovers a mysterious notebook: the "Death Note", which belonged to the Shinigami Ryuk, and grants the user the supernatural ability to kill anyone whose name is written in its pages.',
             inventory: 5,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/51S7T9tAe6L._SX354_BO1,204,203,200_.jpg'
+            image: 'https://i5.walmartimages.com/asr/397369e9-9d16-41ca-9abe-05c094c24cc1_1.46d27dc7f9d54db19fdefd9c4999b27d.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff'
         },
         {
             category: 'ANIME',
@@ -51,27 +51,57 @@ let initialState = {
             tags: 'Dark fantasy, Thriller',
             description: "Tokyo Ghoul is a Japanese dark fantasy manga series written and illustrated by Sui Ishida. It was serialized in Shueisha's seinen manga magazine Weekly Young Jump between September 2011 and September 2014, and was collected in fourteen tankōbon volumes. A prequel, titled Tokyo Ghoul [Jack], ran online on Jump Live in 2013 and was collected in a single tankōbon volume. A sequel, titled Tokyo Ghoul:re, was serialized in Weekly Young Jump between October 2014 and July 2018, and was collected in sixteen tankōbon volumes.",
             inventory: 8,
-            image: 'https://images-na.ssl-images-amazon.com/images/I/51gTbdvr9tL._SX347_BO1,204,203,200_.jpg'
+            image: 'https://i5.walmartimages.com/asr/68309491-eecc-487c-a91a-85b83e1de0bd_1.0aba000f90d929e39c564dcbc69adebd.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff'
         },
 
     ],
+    activeProducts: []
 }
 
 const productReducer = (state = initialState, action) => {
-    let { type } = action;
+    let { type, payload } = action;
 
     switch (type) {
-        case 'SETCATEGORY':
-            let products = initialState.products;
-            return { products };
+        case 'All_Products':
+            return { products: initialState.products };
 
-        case 'RESET':
-            return initialState;
+        case 'ACTIVATE':
+            const activeProducts = getFilteredProducts(payload.name);
+            return { products: activeProducts }
+
+        case 'ADD_TO_CART':
+            const updateInventory = state.products.map(product => {
+                if (product === payload) {
+                    return { ...product, inventory: product.inventory - 1 }
+                }
+                return product;
+            })
+            return { products: updateInventory }
 
         default:
             return state;
     }
 }
+
+export const getFilteredProducts = (category) => {
+    const products = initialState.products;
+    const filteredProducts = products.filter(product => product.category === category);
+    return filteredProducts;
+}
+
+export const getAllProduct = () => {
+    return {
+        type: 'All_Products',
+        payload:products
+    }
+}
+export const addToCart = (product) => {
+    return {
+        type: 'ADD_TO_CART',
+        payload: product
+    }
+}
+
 
 
 export default productReducer;
