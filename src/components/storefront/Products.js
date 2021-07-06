@@ -62,7 +62,7 @@ const Products = props => {
                     .filter(product => product.inventory > 0)
                     .map(product => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} lg={4} key={product.name}>
+                            <Grid item xs={12} sm={6} md={4} lg={5} key={product.name}>
                                 <Card variant="outlined" className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia
@@ -95,7 +95,7 @@ const Products = props => {
                     .filter(product => product.inventory > 0)
                     .map(product => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} lg={4} key={product.name}>
+                            <Grid item xs={12} sm={6} md={4} lg={5} key={product.name}>
                                 <Card variant="outlined" className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia
