@@ -1,7 +1,7 @@
 import { Grid, makeStyles, Card, CardContent, Typography, IconButton } from '@material-ui/core';
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone';
 import { connect } from 'react-redux';
-
+import { putRemoteData } from '../../store/products';
 
 function SimpleCart(props) {
     const useStyles = makeStyles({
@@ -39,13 +39,14 @@ function SimpleCart(props) {
             <Grid item xs className={classes.cart}>
                 <Card raised className={props.cartReducer.cart.length >=5 ? `${classes.scroll}` : `${classes.cart}`}>
                     <CardContent>
-                        {props.cartReducer.cart.map(item => {
+                        {props.cartReducer.cart.map((item,idx) => {
+                            {console.log('item', item)}
                             return (
                                 <>
                                     {/* <p>You pick {item.quantity} of {item.product.name} until now</p> */}
-                                    <Typography className={classes.font} key={item.name} variant="body2">
+                                    <Typography key={idx} className={classes.font} variant="body2">
                                         {item.name}
-                                        <IconButton color="secondary" edge="end" aria-label="delete">
+                                        <IconButton color="secondary" edge="end" aria-label="delete" onClick={() => props.removeFromCart(item)}>
                                         <DeleteForeverTwoToneIcon />
                                         </IconButton>
                                     </Typography>
@@ -63,6 +64,8 @@ const mapStateToProps = state => ({
     cartReducer: state.cartReducer,
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch) => ({
+    removeFromCart: (product) => dispatch(putRemoteData(product, false)),
+  });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SimpleCart);

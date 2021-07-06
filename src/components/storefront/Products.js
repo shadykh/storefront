@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
+import { useEffect } from 'react';
 
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
 import AddCircleTwoToneIcon from '@material-ui/icons/AddCircleTwoTone';
 import OpenInNewTwoToneIcon from '@material-ui/icons/OpenInNewTwoTone';
-import { getAllProduct } from '../../store/products';
-import { addToCart } from '../../store/cart';
+
+import { getRemoteData, putRemoteData } from '../../store/products';
+
+
 
 const Products = props => {
 
@@ -40,6 +43,16 @@ const Products = props => {
     });
 
     const classes = useStyles();
+
+    const fetchProducts = (e) => {
+        e && e.preventDefault();
+        props.get();
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
     console.log('props.productReducer', props.productReducer);
     console.log('props.categoryReducer.activeCategory', props.categoryReducer.activeCategory);
     if (props.categoryReducer.activeCategory === 'all') {
@@ -49,7 +62,7 @@ const Products = props => {
                     .filter(product => product.inventory > 0)
                     .map(product => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} lg={4} key={product.name}>
+                            <Grid item xs={12} sm={6} md={4} lg={5} key={product.name}>
                                 <Card variant="outlined" className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia
@@ -65,8 +78,8 @@ const Products = props => {
                                         </CardContent>
                                     </CardActionArea>
                                     <CardActions>
-                                        <Button color="primary" onClick={() => props.addToCart(product)}>Add to cart <AddCircleTwoToneIcon/> </Button>
-                                        <Button color="primary">Details <OpenInNewTwoToneIcon/> </Button>
+                                        <Button color="primary" onClick={() => props.addToCart(product)}>Add to cart <AddCircleTwoToneIcon /> </Button>
+                                        <Button color="primary">Details <OpenInNewTwoToneIcon /> </Button>
                                     </CardActions>
                                 </Card>
                             </Grid>
@@ -82,7 +95,7 @@ const Products = props => {
                     .filter(product => product.inventory > 0)
                     .map(product => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} lg={4} key={product.name}>
+                            <Grid item xs={12} sm={6} md={4} lg={5} key={product.name}>
                                 <Card variant="outlined" className={classes.card}>
                                     <CardActionArea>
                                         <CardMedia
@@ -98,8 +111,8 @@ const Products = props => {
                                         </CardContent>
                                     </CardActionArea>
                                     <CardActions>
-                                        <Button color="primary" onClick={() => props.addToCart(product)}>Add to cart <AddCircleTwoToneIcon/></Button>
-                                        <Button color="primary">Details<OpenInNewTwoToneIcon/> </Button>
+                                        <Button color="primary" onClick={() => props.addToCart(product)}>Add to cart <AddCircleTwoToneIcon /></Button>
+                                        <Button color="primary">Details<OpenInNewTwoToneIcon /> </Button>
                                     </CardActions>
 
                                 </Card>
@@ -117,6 +130,10 @@ const mapStateToProps = state => ({
     categoryReducer: state.categoryReducer,
 });
 
-const mapDispatchToProps = { getAllProduct, addToCart };
+const mapDispatchToProps = (dispatch) => ({
+    addToCart: (product) => dispatch(putRemoteData(product, true)),
+    get: () => dispatch(getRemoteData())
+});
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

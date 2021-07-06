@@ -1,3 +1,4 @@
+
 let initialState = {
   categories: [
     {
@@ -16,12 +17,15 @@ let initialState = {
       description: '😎Be ready for a lot of FUN👻'
     },
   ],
-  activeCategory: '',
+  activeCategory: null,
 }
 
 const categoryReducer = (state = initialState, action) => {
+
   let { type, payload } = action;
+
   let activeCategory, categories;
+  
   switch (type) {
     case 'ACTIVATE':
       activeCategory = payload;
