@@ -177,7 +177,7 @@ And as developers, here are the high level development tasks that address the ab
 
   - For the repo ***storefront*** clicks => [here](https://github.com/shadykh/storefront).
   - Pull Requests:
-    - [https://github.com/shadykh/storefront/pull/3](https://github.com/shadykh/storefront/pull/3)
+    - [https://github.com/shadykh/storefront/pull/8](https://github.com/shadykh/storefront/pull/8)
 
 **[⬆ Back to Index](#index)**
 
