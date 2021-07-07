@@ -1,13 +1,32 @@
-import { combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+//This file is formatted by Prettier-Code formatter
 
-import categoryReducer from './categories';
-import productReducer from './products';
+/**
+ *  Redux imports.
+ */
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
 
-let reducers = combineReducers({ categoryReducer, productReducer });
+/**
+ *  Reducers imports.
+ */
+import categoryReducer from "./categories";
+import productReducer from "./products";
+import cartReducer from "./cart";
 
+/**
+ *  Combine the Reducers.
+ */
+let reducers = combineReducers({
+  categoryReducer,
+  productReducer,
+  cartReducer,
+});
+
+// export the combined Reducers
 const store = () => {
-    return createStore(reducers, composeWithDevTools());
-}
+  return createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
+};
 
+// export the store
 export default store();

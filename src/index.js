@@ -1,20 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+//This file is formatted by Prettier-Code formatter
 
-import store from './store';
-import App from './App.js';
+/**
+ *  React imports.
+ */
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
-import './style.scss';
+/**
+ *  Components imports.
+ */
+import store from "./store";
+import App from "./App.js";
+
+/**
+ *  Style scss imports.
+ */
+import "./style.scss";
+
+/**
+ *  Main component.
+ */
 
 function Main() {
-
   return (
     <Provider store={store}>
-      <App />
-    </Provider >
-  )
-
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  );
 }
-const rootElement = document.getElementById('root');
+
+// merge the Main to the Html
+const rootElement = document.getElementById("root");
 ReactDOM.render(<Main />, rootElement);

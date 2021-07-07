@@ -41,7 +41,7 @@ Create a UML diagram of the **Virtual Store** architecture on a whiteboard befor
 
 ## Business Requirements
 
-Refer to the [Virtual Store System Overview](../../apps-and-libraries/store/README.md) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
+Refer to the [Virtual Store System Overview](../../../README) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
 
 **[⬆ Back to Index](#index)**
 
@@ -192,7 +192,6 @@ Create the Virtual Store application as follows:
 - I did this lab with help of
   - dependencies
     - node-sass
-    - Material UI
     - react
     - react-dom
     - react-scripts

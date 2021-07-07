@@ -2,11 +2,19 @@
 
 ## Index
 
-- [Lab 36 , v1.1](./public/assets/labVersions/lab36.md)
-- [Lab 37 , v1.2](./public/assets/labVersions/lab37.md)
-- [Lab 38 , v1.3](./public/assets/labVersions/lab38.md)
-- [Lab 39 , v1.4](./public/assets/labVersions/lab39.md)
+- [Development of the App](Development-of-the-App)
+  - [Lab 36 , v1.1](./public/assets/labVersions/lab36.md)
+  - [Lab 37 , v1.2](./public/assets/labVersions/lab37.md)
+  - [Lab 38 , v1.3](./public/assets/labVersions/lab38.md)
+  - [Lab 39 , v1.4](./public/assets/labVersions/lab39.md)
 - [Virtual Store](#Virtual-Store)
+  - [Business Requirements](#Business-Requirements)
+  - [Technical Requirements](#Technical-Requirements)
+  - [Application Structure](#Application-Structure)
+  - [Development Process, Milestones](#Development-Process,-Milestones)
+  - [More about the Lab](#More-about-the-Lab)
+- [Author Links](#Author-Links)
+- [Deployment link 🌍](https://storefront-401.netlify.app)
 
 ---
 
@@ -76,32 +84,100 @@ The application will be created with the following overall architecture and meth
 
 ### Development Process, Milestones
 
->At every stage of development, the application should be publicly deployed
+> At every stage of development, the application should be publicly deployed
 
 1. Phase 1: Application Setup
-    - Basic React Application
-    - Redux State Management
-    - State managed in memory
-    - Material UI Components & Styling
+
+   - Basic React Application
+   - Redux State Management
+   - State managed in memory
+   - Material UI Components & Styling
 
 1. Phase 2: Shopping Cart
-    - Add items to a shopping cart
-    - Update quantities
-    - Remove items from the cart
-    - Show the cart in real-time on the UI
+
+   - Add items to a shopping cart
+   - Update quantities
+   - Remove items from the cart
+   - Show the cart in real-time on the UI
 
 1. Phase 3: Live Data
-    - Connect the application a live API
-    - Persist changes to products based on cart activity.
+
+   - Connect the application a live API
+   - Persist changes to products based on cart activity.
 
 1. Phase 4: Checkout & Detail Pages
-    - Refactor the store to use the latest Redux design pattern (Redux Toolkit)
-    - Add a cart checkout page
-    - Add a product details page
+   - Refactor the store to use the latest Redux design pattern (Redux Toolkit)
+   - Add a cart checkout page
+   - Add a product details page
+
+---
+
+### **More about the Lab**
+
+- #### Author
+
+  - Shady Khaled
+
+  **[⬆ Back to Index](#index)**
+
+---
+
+- #### Github
+
+  - For the repo **_storefront_** clicks => [here](https://github.com/shadykh/storefront).
+
+**[⬆ Back to Index](#index)**
+
+---
+
+- #### UML
+
+  - ![UML](./public/assets/uml_lab39.png)
+
+**[⬆ Back to Index](#index)**
+
+---
+
+- #### App
+
+  - To run 🏃 the app ⬇️:
+    - clone the repo
+    - run npm i / npm install
+    - run `npm start`
+    - Deployment link 🌍: [storefront](https://storefront-401.netlify.app/)
+
+- This app done with help of
+  - dependencies
+    - node-sass
+    - react
+    - react-dom
+    - react-scripts
+    - web-vitals
+    - @material-ui/core
+    - @material-ui/icon
+    - axios
+    - react-redux
+    - react-router-dom
+    - redux-devtools-extension
+    - redux-thunk
+  - framework
+    - Node.js
+    - React
+  - tools
+    - Github.
+    - Netlify.
+    - Heroku.
+    - VsCode.
+    - Ubuntu.
+    - ZSH
+    - [app.diagrams.net](app.diagrams.net)
+
+**[⬆ Back to Index](#index)**
 
 <br>
 
 ---
+
 <br>
 
 ## Author Links
