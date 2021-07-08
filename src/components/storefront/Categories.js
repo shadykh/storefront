@@ -9,16 +9,31 @@ import { Button, ButtonGroup, Typography } from "@material-ui/core";
  *  React imports.
  */
 import { connect } from "react-redux";
+import { useEffect } from "react";
 
 /**
  *  import the functionality to the Categories component
  */
-import { setActiveCategory, reset, allProducts } from "../../store/categories";
+import {
+  setActiveCategory,
+  getRemoteData,
+  reset,
+  allProducts,
+} from "../../store/categories";
 
 /**
  *  Categories component.
  */
 const Categories = (props) => {
+  const fetchProducts = (e) => {
+    e && e.preventDefault();
+    props.get();
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <section className="brows-cat">
       <Typography variant="h5">Browse Categories:</Typography>
@@ -47,7 +62,12 @@ const mapStateToProps = (state) => ({
 });
 
 // map the dispatch to the props
-const mapDispatchToProps = { setActiveCategory, reset, allProducts };
+const mapDispatchToProps = (dispatch) => ({
+  setActiveCategory: (cat) => dispatch(setActiveCategory(cat)),
+  reset: () => dispatch(reset()),
+  get: () => dispatch(getRemoteData()),
+  allProducts: () => dispatch(allProducts()),
+});
 
 // export the component
 export default connect(mapStateToProps, mapDispatchToProps)(Categories);

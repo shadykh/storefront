@@ -1,24 +1,14 @@
 //This file is formatted by Prettier-Code formatter
 
+// axios to make http requests
+import axios from "axios";
+
+// API from where we got the data for the categories
+let API = "https://shady-auth-api.herokuapp.com/api/v1/categories";
+
 // the initial state
 let initialState = {
-  categories: [
-    {
-      name: "ELECTRONICS",
-      displayName: "ELECTRONICS",
-      description: "Devices that make your life easier 💻",
-    },
-    {
-      name: "FOOD",
-      displayName: "FOOD",
-      description: "Heeeey 💃 Yummy 😋",
-    },
-    {
-      name: "ANIME",
-      displayName: "ANIME",
-      description: "😎Be ready for a lot of FUN👻",
-    },
-  ],
+  categories: [],
   activeCategory: null,
 };
 
@@ -33,14 +23,19 @@ const categoryReducer = (state = initialState, action) => {
   switch (type) {
     case "ACTIVATE":
       activeCategory = payload;
-      categories = initialState.categories;
+      categories = state.categories;
       return { activeCategory, categories };
     case "All_Products":
       activeCategory = "all";
-      categories = initialState.categories;
+      categories = state.categories;
       return { activeCategory, categories };
+    case "Get_Categories":
+      return {
+        categories: payload,
+        activeCategory: initialState.activeCategory,
+      };
     case "RESET":
-      return initialState;
+      return { ...state, activeCategory: initialState.activeCategory };
 
     default:
       return state;
@@ -54,12 +49,14 @@ export const setActiveCategory = (category) => {
     payload: category,
   };
 };
+
 // export the allProducts functionality
 export const allProducts = () => {
   return {
     type: "All_Products",
   };
 };
+
 // export the reset functionality
 export const reset = () => {
   return {
@@ -67,5 +64,17 @@ export const reset = () => {
   };
 };
 
-// export the categoryReducer reducer
+//Fetch the data from API
+export const getRemoteData = () => async (dispatch) => {
+  let response = await axios.get(API);
+  dispatch(getAction(response.data));
+};
+
+export const getAction = (data) => {
+  return {
+    type: "Get_Categories",
+    payload: data,
+  };
+};
+
 export default categoryReducer;
